@@ -1,0 +1,18 @@
+<model package="Man" baseClass="xPDOObject" platform="mysql">
+  <object class="Man" table="man" extends="xPDOObject">
+    <field key="id" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
+    <field key="rank" dbtype="varchar" precision="100" phptype="string" null="true" />
+    <field key="lastname" dbtype="varchar" precision="255" phptype="string" null="true" />
+    <field key="firstname" dbtype="varchar" precision="255" phptype="string" null="true" />
+    <field key="patronymic" dbtype="varchar" precision="255" phptype="string" null="true" />
+    <field key="birthdate" dbtype="varchar" precision="11" phptype="string" null="true" />
+    <field key="birthplace" dbtype="varchar" precision="255" phptype="string" null="true" />
+    <field key="calldate" dbtype="varchar" precision="11" phptype="string" null="true" />
+    <field key="callplace" dbtype="varchar" precision="255" phptype="string" null="true" />
+    <field key="deathdate" dbtype="varchar" precision="11" phptype="string" null="true" />
+    <field key="awards" dbtype="varchar" precision="255" phptype="string" null="true" />
+    <field key="photo" dbtype="varchar" precision="255" phptype="string" null="true" />
+    <field key="provider" dbtype="varchar" precision="255" phptype="string" null="true" />
+    <field key="note" dbtype="varchar" precision="255" phptype="string" null="true" />
+  </object>
+</model>
