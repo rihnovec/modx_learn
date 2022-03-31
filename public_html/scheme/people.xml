@@ -1,5 +1,5 @@
-<model package="Man" baseClass="xPDOObject" platform="mysql">
-  <object class="Man" table="man" extends="xPDOObject">
+<model package="People" baseClass="xPDOObject" platform="mysql">
+  <object class="People" table="people" extends="xPDOObject">
     <field key="id" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
     <field key="rank" dbtype="varchar" precision="100" phptype="string" null="true" />
     <field key="lastname" dbtype="varchar" precision="255" phptype="string" null="true" />

@@ -17,7 +17,7 @@ $xpdo = new xPDO($dsn, $database_user, $database_password);
 $xpdo->setLogLevel(xPDO::LOG_LEVEL_INFO);
 $xpdo->setLogTarget(XPDO_CLI_MODE ? 'ECHO' : 'HTML');
 
-if (!$xpdo->addPackage('Man', $_SERVER['DOCUMENT_ROOT'] . '/model/', $tablePrefix)) {
+if (!$xpdo->addPackage('People', $_SERVER['DOCUMENT_ROOT'] . '/model/', $tablePrefix)) {
   print 'Возникли проблемы при установке вашего пакета';
 } else {
   $manager = $xpdo->getManager();
@@ -25,18 +25,34 @@ if (!$xpdo->addPackage('Man', $_SERVER['DOCUMENT_ROOT'] . '/model/', $tablePrefi
     print 'Не удалось получить менеджер';
   }
   
-  if (!$manager->createObjectContainer('Man')) {
-    print 'Не удалось создать таблицу Man';
+  if (!$manager->createObjectContainer('People')) {
+    print 'Не удалось создать таблицу People';
   }
 
-  $man = $xpdo->newObject('Man', [
-    'name' => 'Anton Rikhnovets'
-  ]);
+  $arrPeople = include $_SERVER['DOCUMENT_ROOT'] . '/parse-csv.php';
 
-  if (!$man) {
-    print 'Не удалось создать новый объект Man';
-  } else {
-    print 'Сохраняем';
-    $man->save();
+  foreach ($arrPeople as $man) {
+    $people = $xpdo->newObject('People', [
+      'rank' => $man[1],
+      'lastname' => $man[2],
+      'firstname' => $man[3],
+      'patronymic' => $man[4],
+      'birthdate' => $man[5],
+      'birthplace' => $man[6],
+      'calldate' => $man[7],
+      'callplace' => $man[8],
+      'deathdate' => $man[9],
+      'awards' => $man[10],
+      'photo' => $man[11],
+      'provider' => $man[12],
+      'note' => $man[13]
+    ]);
+  
+    if (!$people) {
+      print 'Не удалось создать новый объект People';
+    } else {
+      print "Сохраняем $man[2] $man[3] $man[4] <br>";
+      $people->save();
+    }
   }
 }

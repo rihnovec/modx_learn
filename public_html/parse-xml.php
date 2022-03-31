@@ -23,7 +23,7 @@ $schema = $_SERVER['DOCUMENT_ROOT'] . '/scheme/people.xml';
 $target = $_SERVER['DOCUMENT_ROOT'] . '/model/';
 $generator->parseSchema($schema,$target);
 
-echo "Hello";
+echo "Файлы модели созданы";
 
 // $xpdo->setLogLevel(xPDO::LOG_LEVEL_INFO);
 // $xpdo->setLogTarget(XPDO_CLI_MODE ? 'ECHO' : 'HTML');
