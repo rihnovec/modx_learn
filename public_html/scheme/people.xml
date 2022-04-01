@@ -5,11 +5,11 @@
     <field key="lastname" dbtype="varchar" precision="255" phptype="string" null="true" />
     <field key="firstname" dbtype="varchar" precision="255" phptype="string" null="true" />
     <field key="patronymic" dbtype="varchar" precision="255" phptype="string" null="true" />
-    <field key="birthdate" dbtype="varchar" precision="11" phptype="string" null="true" />
+    <field key="birthdate" dbtype="varchar" precision="50" phptype="string" null="true" />
     <field key="birthplace" dbtype="varchar" precision="255" phptype="string" null="true" />
-    <field key="calldate" dbtype="varchar" precision="11" phptype="string" null="true" />
+    <field key="calldate" dbtype="varchar" precision="50" phptype="string" null="true" />
     <field key="callplace" dbtype="varchar" precision="255" phptype="string" null="true" />
-    <field key="deathdate" dbtype="varchar" precision="11" phptype="string" null="true" />
+    <field key="deathdate" dbtype="varchar" precision="50" phptype="string" null="true" />
     <field key="awards" dbtype="varchar" precision="255" phptype="string" null="true" />
     <field key="photo" dbtype="varchar" precision="255" phptype="string" null="true" />
     <field key="provider" dbtype="varchar" precision="255" phptype="string" null="true" />
