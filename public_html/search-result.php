@@ -18,9 +18,14 @@ $name = $_REQUEST['name'];
 if (!$xpdo->addPackage('People', $_SERVER['DOCUMENT_ROOT'] . '/model/', $tablePrefix)) {
   echo 'Возникли проблемы при установке вашего пакета';
 } else {
-  $mans = $xpdo->getCollection('People', [
-    'lastname:LIKE' => "%$name%"
-  ]);
+  $mans = [];
+
+  $results = $xpdo->query("SELECT *, CONCAT(lastname, ' ', firstname, ' ', patronymic) as fullname FROM modx_people HAVING fullname LIKE '%$name%'");
+
+  while ($resultItem = $results->fetch(PDO::FETCH_ASSOC)) {
+    $mans[] = $resultItem;
+  }
+
   
   if (count($mans) === 0) {
     echo "По вашему запросу ничего не найдено";

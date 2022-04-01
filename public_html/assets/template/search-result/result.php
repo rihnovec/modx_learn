@@ -28,8 +28,7 @@ if (!class_exists('modX')) {
   <tbody>
     <?php
       $i = 1;
-      foreach ($mans as $man) {
-        $arrMan = $man->toArray();
+      foreach ($mans as $arrMan) {
     ?>
     <tr>
       <th scope="row"><?=$i?></th>
